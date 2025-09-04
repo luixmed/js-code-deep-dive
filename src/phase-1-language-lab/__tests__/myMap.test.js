@@ -30,3 +30,7 @@ test("throws TypeError if array is null or undefined", () => {
   expect(() => myMap(null, jest.fn())).toThrow(TypeError);
   expect(() => myMap(undefined, jest.fn())).toThrow(TypeError);
 });
+
+test("throws TypeError if callback is not a function", () => {
+  expect(() => myMap([1, 2, 3], "not a function")).toThrow(TypeError);
+});
