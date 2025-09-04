@@ -25,3 +25,8 @@ test("the callback receives the element, index, and array arguments", () => {
   expect(mockCallback).toHaveBeenCalledWith("b", 1, input);
   expect(mockCallback).toHaveBeenCalledWith("c", 2, input);
 });
+
+test("throws TypeError if array is null or undefined", () => {
+  expect(() => myMap(null, jest.fn())).toThrow(TypeError);
+  expect(() => myMap(undefined, jest.fn())).toThrow(TypeError);
+});
